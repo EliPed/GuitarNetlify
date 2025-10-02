@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Guitar List</title>
 </head>
 <body>
-    
+  <h1>Available Guitars</h1>
+  <div id="guitars"></div>
+
+  <script>
+    const guitars = [
+      {
+        "brand": "Ibanez",
+        "model": "AZES31",
+        "color": "Blue",
+        "year": 2025,
+        "price": 1000
+      }
+    ];
+
+    const container = document.getElementById("guitars");
+    guitars.forEach(guitar => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <h2>${guitar.brand} - ${guitar.model}</h2>
+        <p>Color: ${guitar.color}</p>
+        <p>Year: ${guitar.year}</p>
+        <p>Price: $${guitar.price}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
 </body>
 </html>
